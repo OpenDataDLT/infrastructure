@@ -1,0 +1,38 @@
+# version: '2'
+
+# services:
+#   urn-service:
+#    image: dockerhub.fokus.fraunhofer.de:5000/blockchain-odpid/urn_service:latest
+#    container_name: urn-service
+#    ports:
+#      - 4000:4000
+#    environment:
+#      - ODPID_SERVICE=http://odpid_service:3001
+#      - EXPLORE_SERVICE=http://localhost:4000
+#      - URN_PROTOCOL="did"
+#      - URN_TYPE="odpid"
+#    depends_on:
+#      - odpid_service
+#    links:
+#      - odpid_service:odpid_service
+
+#   odpid_service:
+#    image: dockerhub.fokus.fraunhofer.de:5000/blockchain-odpid/odpid_contract:latest
+#    container_name: odpid_service
+#    ports:
+#      - 3001:3000
+#    environment:
+#      - RPC_HOST=testrpc_server
+#      - RPC_PROTOCOL=http
+#      - RPC_PORT=8545
+#    depends_on:
+#      - testrpc_server
+#    links:
+#      - testrpc_server:testrpc_server
+  
+#   # for testing only RPC will be replaced with Hyperledger ENDPOINTS
+#   testrpc_server:
+#     image: dockerhub.fokus.fraunhofer.de:5000/blockchain/testrpc_network
+#     container_name: testrpc_server
+#     ports:
+#       - 8545:8545
